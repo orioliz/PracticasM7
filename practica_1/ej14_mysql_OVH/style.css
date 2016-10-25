@@ -1,0 +1,35 @@
+.content {
+    background: ;
+    width: 36em; height: 4em;
+    margin: 0 auto;
+}
+
+
+form {     
+    background: #6b99d8;
+    width: 50%;
+    padding: 20px 34px;   
+    margin: 0 auto;
+}
+
+input[type=text] {
+    padding-top: 1em;
+    margin-top: 6px;
+}
+
+input {
+    margin-left: 42px; 
+}
+
+input[type=submit] {
+    width: 6em; height: 3em;
+    color: #ded3d3;
+    background: #042655;
+}
+
+
+
+
+
+
+

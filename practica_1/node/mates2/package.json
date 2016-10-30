@@ -1,11 +1,11 @@
 {
-  "name": "matematicas",
+  "name": "mates2",
   "version": "1.0.0",
-  "description": "mates",
-  "main": "index.js",
+  "description": "CalculadoraBasica",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "urii",
+  "author": "Oriol_Izquierdo",
   "license": "ISC"
 }

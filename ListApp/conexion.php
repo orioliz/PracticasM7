@@ -8,11 +8,11 @@
 
 $db_host = 'localhost'; 
 $db_user = 'root'; 
-$db_pass = 'root';
+$db_password = 'root';
 $db_name = 'listapp';
 
 //OBTENER VAR DE LA CONEXION
-$db = new mysqli($db_host,$db_user,$db_pass,$db_name);
+$db = new mysqli($db_host,$db_user,$db_password,$db_name);
 	if($db ->connect_errno) 
 		//echo "Error_connect_DB";
 		die('Error_connect_DB');

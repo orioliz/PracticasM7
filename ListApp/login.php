@@ -1,34 +1,47 @@
 <?php
-ini_set('display_errors','1');
 
-require('conexion.php');
+   include 'conexion.php'; // INCLUIMOS LA CONEXION A LA BBDD
 	
-	session_start(); // inicimaos sesion del usuario
-	
-	if(isset($_SESSION["email"])){
-		header("Location: list.php");
-	}
-	
-	if(!empty($_POST)) // ha rellenao el formulario
-	{
-		$email = $_POST['email']);
-		$password = $_POST['password']);
-		$error = '';
-		
-		
-		
-		$sql = mysql_query("SELECT * FROM users WHERE email = '$email' ");
-		$result=$mysqli->query($sql);
-		$rows = $result->num_rows;
-		
-		if($rows > 0) {
-			$row = $result->fetch_assoc();
-			$_SESSION['email'] = $row['email'];
-			$_SESSION['password'] = $row['password'];
+	if(!empty($_POST)){ // ASEGURAMOS QUE NO ESTE VACIO EN FORMULARIO
+		//echo "hol";
+		if(!empty($_POST['email']) && !empty($_POST['password']))
+		{ // QUE NO ESTE VACIO LOS INPUTS
 			
-			header("location: list.php");
-			} else {
-			$error = "El nombre o contraseña son incorrectos";
-		}
-	}
+			$email = $_POST['email']; //GUARDAMOS LO INTRODUCIDO EN EL FORMULARIO DE LOGIN
+			$passw = $_POST['password'];
+
+
+			
+			// CONECTAMOS CON BD		
+	
+			$sql = " SELECT * FROM users WHERE email='$email' AND password='$passw' "; 
+
+
+
+			//EJECUTAMOS LA BUSQUEDA SQL
+			//  $query = $con->query($sql);
+			//$query = mysql_query($sql,$con);
+
+
+			$resultado = $con->query($sql);
+			$row = $resultado->fetch_assoc();
+			
+			// SI EL USUARIO EXISTE....
+			if($row>0) //SI HAY RESULTADOS....
+				{	
+					//crear sesion
+					session_start();
+					$_SESSION['email']=$email;
+					setcookie('email',$email,time()+1800,'/listapp','');
+					header('Location:list.php');
+					exit();
+				}else{					
+					header('Location:error.php');
+					exit();
+				}
+				
+		} // FIN DEl 2º if !
+		 
+	} // FIN DEl 1r if !	
+
 ?>

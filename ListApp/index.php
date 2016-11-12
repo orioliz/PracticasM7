@@ -1,28 +1,5 @@
 <?php
-	require('conexion.php');
-	 
-	$email = $_POST['email'];
-	$pass = $_POST['password'];
-	 
-	
-	//SELECCIONAMOS EL EMAIL INTRODUCIDO
-	$result = mysql_query("SELECT * from users where email='" . $email . "'");
-	 
-	if($row = mysql_fetch_array($result)){
-		if($row['password'] == $pass){
-			session_start();
-			$_SESSION['usuario'] = $email; // creamos la sesion con el user(email)
-			header("Location: list.php");
-		}else{
-			header("Location: index.php");
-			exit();
-		}
-		}else{
-			header("Location: index.php");
-			exit();
-	}
-	 
- 
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,11 +27,11 @@
 
 		<div class="row text-center"> 
 			<div class="col-xs-12">
-				<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 					
-					<label>Su Email:</label>
-					<input type="email" id="email" name="email" required>
-					<label>Su Contraseña:</label>
-					<input type="password" id="password" name="password" required> <br/>
+				<form action="login.php" method="post"> 					
+					Su Email: <br />
+					<input type="email"  name="email" required>
+					<br/>Su Contraseña:<br />
+					<input type="password"  name="password" required> <br/>
 					<input type="submit" value="Entrar" class="btn btn-success">
 				</form>	
 			</div>

@@ -19,7 +19,7 @@
 				<a href="index.php" class="btn btn-info">Volver a atrás</a>	
 			</div>		
 			<div class="col-sm-6">
-				<p>Ingrese los datos con los que entrara en ListApp 2.0</p>
+				<h3>Ingrese los datos con los que entrara en ListApp 2.0</h3>
 			</div>
 		</div>
 
@@ -38,16 +38,9 @@
 		<footer class="text-center">
 			Creado por oriol Izquierdo &copy 2016
 		</footer>
-	</div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">primera columna</div>
-			<div class="col-md-6">segunda columna</div>
-		</div>
-	</div>
-
 	
+	</div> <!-- FIN DE CONTINAER-FLUID-->
+
 </body>
 </html>
 

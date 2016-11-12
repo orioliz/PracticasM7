@@ -12,8 +12,8 @@ $db_password = 'root';
 $db_name = 'listapp';
 
 //OBTENER VAR DE LA CONEXION
-$db = new mysqli($db_host,$db_user,$db_password,$db_name);
-	if($db ->connect_errno) 
+$con = new mysqli($db_host,$db_user,$db_password,$db_name);
+	if ($con ->connect_errno) 
 		//echo "Error_connect_DB";
 		die('Error_connect_DB');
 	else {
@@ -21,7 +21,9 @@ $db = new mysqli($db_host,$db_user,$db_password,$db_name);
 		echo "conectado ok";
 		
 	} //fin de else
-	$db->close();
+	
+	//cerramos la conexion con la bd
+	//$db->close();
 
 
 ?>

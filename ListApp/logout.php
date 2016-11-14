@@ -1,5 +1,5 @@
 <?php
-session_start(); // iniciamos sesion
+//session_start(); // iniciamos sesion
 session_destroy(); // cerramos sesion
 
 

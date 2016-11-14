@@ -6,8 +6,10 @@
 	
 
 }
-body{
 
+
+
+body{
 	background: #E0E1E7;
 
 }
@@ -16,4 +18,60 @@ body{
 .newuser{
 	padding: 28px 12px;
 }
+
+
+
+
+.flex-parent{
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+ 
+.flex-child{
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.registrarse{
+	border-left: 1px solid #A0ABD4;
+}
+
+.btnre{
+	background: #596387;
+	border:none;
+}
+.btnre:hover{
+	background: #596387;
+	opacity: 0.70
+}
+
+input:focus {
+	background: #DAE2FF;
+	border:;
+
+}
+
+
+.btnn {	
+	background: #87784B;
+	border:none;
+}
+.btnn:hover{
+	background:#87784B;
+	opacity: 0.80	
+}
+
+.olvidado{
+	position: absolute;	
+	margin-left: -90px;
+}
+
+
+
+
+
 

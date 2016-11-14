@@ -12,9 +12,10 @@ $db_password = 'root';
 $db_name = 'listapp';
 
 //OBTENER VAR DE LA CONEXION
-$con = new mysqli($db_host,$db_user,$db_password,$db_name);
-	if ($con ->connect_errno) 
-		//echo "Error_connect_DB";
+//$con = new mysqli($db_host,$db_user,$db_password,$db_name);
+$con = mysql_connect($db_host,$db_user,$db_password,$db_name);
+	if ($con ->connect_errno)
+		
 		die('Error_connect_DB');
 	else {
 		//comprovar _post

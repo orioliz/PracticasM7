@@ -1,51 +1,47 @@
 <?php
-session_start();
+include('header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ListApp 2.0</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ListApp 2.0</title>	
+	<link rel="stylesheet" href="css/bootstrap.css">	
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header> 
-	<div class="container-fluid">
-		<div class="jumbotron">
-			<h1>ListApp 2.0</h1>
-			<p>Web para controlar tus tareas de forma Online</p>
-		</div>
-</header>
-		<div class="row text-center">
-			<form action="registrarse.php" method="post">				
-				<input type="submit" value="Registrarse" class="btn btn-primary">	
-			</form>
-		</div>
 
+	
+		<div class="row text-center flex-parent">
+			<div class="col-md-5 col-xs-12 flex-child"> 
+				<h4>¿Eres nuevo? Registrate y disfruta de ListApp 2.0</h4>
+				<form action="registrarse.php" method="post">				
+					<input type="submit" value="Registrarse" class="btnre btn btn-primary">	
+				</form>
+			</div>		
 
-		<div class="row text-center"> 
-			<div class="col-xs-12">
-				<form action="login.php" method="post"> 					
-					Su Email: <br />
-					<input type="email"  name="email" required>
-					<br/>Su Contraseña:<br />
-					<input type="password"  name="password" required> <br/>
-					<input type="submit" value="Entrar" class="btn btn-success">
-				</form>	
-			</div>
-			
+						
+				<div class="col-md-7 col-xs-12 registrarse">
+					<h3>Iniciar sesión</h3> <br/><br/>
+
+					<form action="login.php" method="POST"> 					
+						Dirección de  Email: <br />
+						<input type="email"  name="email" required>
+						<br/><br/> Contraseña:  <br />
+						<input type="password"  name="password" required> <br/>
+						<a href="#" class="olvidado">Olvidé mi contraseña</a> <br><br>
+						<input type="submit" value="Entrar" name="enter" class="btnn btn btn-success">
+					</form>	
+				</div>
+		</div>
 		
-		</div>		
-
-
+		
 
 		<footer class="text-center">
 			Creado por Oriol Izquierdo &copy 2016
 		</footer>
+	
 	</div>
-
 
 	
 </body>

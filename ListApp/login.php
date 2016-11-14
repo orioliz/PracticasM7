@@ -1,44 +1,48 @@
 <?php
-
-   include 'conexion.php'; // INCLUIMOS LA CONEXION A LA BBDD
+ini_set('display_errors','1');
+include 'conexion.php'; // INCLUIMOS LA CONEXION A LA BBDD
+//require "conexion.php";
 	
 	if(!empty($_POST)){ // ASEGURAMOS QUE NO ESTE VACIO EN FORMULARIO
-		//echo "hol";
+		
 		if(!empty($_POST['email']) && !empty($_POST['password']))
 		{ // QUE NO ESTE VACIO LOS INPUTS
 			
-			$email = $_POST['email']; //GUARDAMOS LO INTRODUCIDO EN EL FORMULARIO DE LOGIN
-			$passw = $_POST['password'];
-
-
+			//VARIABLES DE INPUTS
+			$email = $_POST['email']; 
+			$passw = $_POST['password'];		
 			
-			// CONECTAMOS CON BD		
+			// CONECTAMOS CON BD
 	
-			$sql = " SELECT * FROM users WHERE email='$email' AND password='$passw' "; 
-
-
-
+			$sql = "SELECT * FROM users WHERE email='$email' AND passw='$passw' "; 
+			
+			
+			echo "$sql";
 			//EJECUTAMOS LA BUSQUEDA SQL
-			//  $query = $con->query($sql);
-			//$query = mysql_query($sql,$con);
+		
+		//	$result = $con->query($sql);
+		//	$row = mysqli_fetch_assoc($result);
 
+			$resultado = mysqli_query($con, $sql);
+			$filas=mysqli_num_rows($resultado);
 
-			$resultado = $con->query($sql);
-			$row = $resultado->fetch_assoc();
 			
 			// SI EL USUARIO EXISTE....
-			if($row>0) //SI HAY RESULTADOS....
+			if($filas>0) 
 				{	
 					//crear sesion
-					session_start();
-					$_SESSION['email']=$email;
-					setcookie('email',$email,time()+1800,'/listapp','');
+					//session_start();
+					//$_SESSION['email']=$email;
+					//setcookie('email',$email,time()+1800,'/listapp','');
 					header('Location:list.php');
-					exit();
-				}else{					
-					header('Location:error.php');
-					exit();
+					//exit();
 				}
+			else
+				{					
+					header('Location:loginerror.php');
+					
+				}
+			
 				
 		} // FIN DEl 2º if !
 		 

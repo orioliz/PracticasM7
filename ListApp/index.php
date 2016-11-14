@@ -24,7 +24,7 @@ include('header.php');
 				<div class="col-md-7 col-xs-12 registrarse">
 					<h3>Iniciar sesión</h3> <br/><br/>
 
-					<form action="login.php" method="POST"> 					
+					<form action="login2.php" method="POST"> 					
 						Dirección de  Email: <br />
 						<input type="email"  name="email" required>
 						<br/><br/> Contraseña:  <br />

@@ -1,8 +1,8 @@
+
 <?php
-//session_start(); // iniciamos sesion
-session_destroy(); // cerramos sesion
-
-
-header('location: index.php'); // le enviamos a index
-
+  session_start();
+  unset($_SESSION['email']);
+  session_destroy();
+  header("Location: index.php");
+  exit();
 ?>

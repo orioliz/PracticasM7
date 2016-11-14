@@ -1,5 +1,6 @@
 <?php
 ini_set('display_errors','1');
+
 include 'conexion.php'; // INCLUIMOS LA CONEXION A LA BBDD
 //require "conexion.php";
 	
@@ -24,7 +25,10 @@ include 'conexion.php'; // INCLUIMOS LA CONEXION A LA BBDD
 		//	$row = mysqli_fetch_assoc($result);
 
 			$resultado = mysqli_query($con, $sql);
+			
 			$filas=mysqli_num_rows($resultado);
+			
+
 
 			
 			// SI EL USUARIO EXISTE....

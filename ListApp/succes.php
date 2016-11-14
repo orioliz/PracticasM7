@@ -5,7 +5,7 @@ include('header.php');
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Nuevo registro</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>

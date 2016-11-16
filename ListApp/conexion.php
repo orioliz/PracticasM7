@@ -19,7 +19,7 @@ $con = mysql_connect($db_host,$db_user,$db_password,$db_name);
 		die('Error_connect_DB');
 	else {
 		//comprovar _post
-		echo "conectado ok";
+	//	echo "conectado ok";
 		
 	} //fin de else
 	
